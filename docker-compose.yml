@@ -29,6 +29,8 @@ services:
       TRANSFORM_LOCALHOST_TO_DOCKER_INTERNAL: ${TRANSFORM_LOCALHOST_TO_DOCKER_INTERNAL:-true}
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    volumes:
+      - ~/mcp-servers:/app/mcp-servers
     depends_on:
       postgres:
         condition: service_healthy
